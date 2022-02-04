@@ -1,6 +1,6 @@
 import { data } from '../state.js'
 
-export default function (payload) {
-  const k = payload['#']
-  return data[k] && JSON.parse(data[k])
+export default function (b, ws) {
+  const k = b['#']
+  ws.json({ '#': k, ':': data[k] })
 }

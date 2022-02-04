@@ -1,8 +1,8 @@
 import { data, hook } from '../state.js'
 
-export default function (payload, ws) {
-  const k = payload['#']
+export default function (b, ws) {
+  const k = b['#']
   if (!hook[k]) hook[k] = new Set()
   hook[k].add(ws.id)
-  return data[k] && JSON.parse(data[k])
+  ws.json({ '#': k, ':': data[k] })
 }
