@@ -1,6 +1,7 @@
 {
   "type": "module",
   "dependencies": {
+    "js-priority-queue": "^0.1.5",
     "ws": "^8.4.2"
   }
 }

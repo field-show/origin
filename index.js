@@ -1,7 +1,10 @@
 import { WebSocketServer, WebSocket } from 'ws'
 import { serial } from './utils/crypto.js'
 import { conn } from './state.js'
-import handler from './controllers/index.js'
+import handler from './controllers/pray.js'
+import law from './controllers/law.js'
+
+law()
 
 const wss = new WebSocketServer({ port: 8000 }, () => {
   console.log('field/origin listens on 8000')
